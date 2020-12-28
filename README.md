@@ -1,3 +1,12 @@
-# final_project-shinjie0927
-final_project-shinjie0927 created by GitHub Classroom
-tangchishe or saodilei or project 17
+# 貪吃蛇遊戲
+
+**如何開始遊戲**
+1.下載snakeGame.m檔案。
+2.用戶可在檔案第三行設置遊戲難度，1為最簡單，10為最難。
+3.在command window輸入snakeGame以執行程序。
+4.執行的同時畫面跳出代表遊戲開始，以上下左右四個按鍵控制蛇走向。
+
+**遊戲規則**
+- 用戶需要操控蛇來吃下食物。
+- 當蛇頭咬到自己或碰到牆壁則遊戲結束。
+- 遊戲中，用戶可使用空格鍵來暫停遊戲。按下暫停後，用戶可選擇繼續遊戲或退出遊戲。
