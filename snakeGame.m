@@ -1,30 +1,32 @@
-function snakeGame
+  function snakeGame
+
+    diff=8;    %Ãø«×,¥i³]¸m1~10(µe­±¨ê·sªºÀW²v¡^
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     L=20;
-    axis equal    %è¨­ç½®å°ç¨±åæ¨™è»¸
-    axis(0.5+[0 L 0 L])   %æ¸¸æˆç•Œé¢å¤§å°   %ç¯„åœç‚º20 
-    %gca:get current axiså¯å›å‚³ä½¿ç”¨ä¸­çš„åœ–è»¸
+    axis equal    %³]¸m¹ïºÙ§¤¼Ğ¶b
+    axis(0.5+[0 L 0 L])   %´å?¬É­±¤j¤p   %½d³ò¬°20 
+    %gca:get current axis¥i¦^¶Ç¨Ï¥Î¤¤ªº¹Ï¶b
     set(gca,'xtick',[],'ytick',[])
     hold on
 
 
     % a=(randi([1 20],1); b=(randi([1 20],1);
-    head=[10,10];  %è¨­å®šè›‡é ­åˆå§‹åæ¨™
-    direct=[1,0];   %è›‡é ­æœå‘
-    body=[10,10;9,10;8,10;7,10];    %è›‡èº«ä½ç½®åæ¨™
-    long=4;   %è›‡çš„é•·åº¦
-    %food=[5,5]  %è¨­å®šä¸€é–‹å§‹é£Ÿç‰©åæ¨™
-    food = randi(L,[1 2]);    %éš¨æ©Ÿç”¢ç”Ÿé£Ÿç‰©ä½ç½®   
-    %scatteræ˜¯ç”¨ç”¨ä¾†ç•«æ•£é»åœ–çš„å‡½æ•¸
-    %ç•«å‡ºé£Ÿç‰©å’Œè›‡
-    drawFood=scatter(food(1),food(2),150,'r','filled');
-    drawSnake=scatter(gca, body(:,  1), body(:, 2), 250, 'bs', 'filled');
+    head=[10,10];  %³]©w³DÀYªì©l§¤¼Ğ
+    direct=[1,0];   %³DÀY´Â¦V
+    body=[10,10;9,10;8,10;7,10];    %³D¨­¦ì¸m§¤¼Ğ
+    long=4;   %³Dªºªø«×
+    food = randi(L,[1 2]);    %ÀH¾÷²£¥Í­¹ª«¦ì¸m   
+    %scatter¬O¥Î¥Î¨Óµe´²ÂI¹Ïªº¨ç¼Æ
+    %µe¥X­¹ª«©M³D
+    drawFood=scatter(food(1),food(2),150,'r');
+    drawSnake=scatter(gca, body(:,  1), body(:, 2), 250, 'bs');
 
 
 
-    set(gcf,'KeyPressFcn',@key);  %è¨˜éŒ„éµç›¤æŒ‰éµ
-    diff=8;    %é›£åº¦,å¯è¨­ç½®1~10(ç•«é¢åˆ·æ–°çš„é »ç‡ï¼‰
-    game = timer('ExecutionMode', 'FixedRate', 'Period',1/diff, 'TimerFcn', @snakeGame);       %è®¾ç½®å®šæ—¶å™¨çš„å‚æ•°
-    start(game)                               %å¼€å§‹æ¸¸æˆ
+    set(gcf,'KeyPressFcn',@key);  %°O¿ıÁä½L«öÁä
+
+    game = timer('ExecutionMode', 'FixedRate', 'Period',1/diff, 'TimerFcn', @snakeGame);       %?¸m©w?¾¹ªº??
+    start(game)                               %?©l´å?
     
         function key(~,event)
         switch event.Key
@@ -46,29 +48,29 @@ function snakeGame
                 end
             case 'space'
                 stop(game);
-                selection=questdlg('éŠæˆ²æš«åœ','å…¬å‘Š','é€€å‡ºéŠæˆ²','ç¹¼çºŒéŠæˆ²','é€€å‡ºéŠæˆ²');
-                if selection=='ç¹¼çºŒéŠæˆ²'
+                selection=questdlg('¹CÀ¸¼È°±','¤½§i','°h¥X¹CÀ¸','Ä~Äò¹CÀ¸','°h¥X¹CÀ¸');
+                if selection=='Ä~Äò¹CÀ¸'
                     start(game);
-                elseif selection=='é€€å‡ºéŠæˆ²'
+                elseif selection=='°h¥X¹CÀ¸'
                     close;
                 end
         end
     end
     
     function snakeGame(~,~)
-      head=head+direct;    %è›‡é ­å¾€å‰ç§»å‹•ä¸€æ­¥
-      body=[head;body];    %é€£ä¸Šé ­è·Ÿèº«é«”
+      head=head+direct;    %³DÀY©¹«e²¾°Ê¤@¨B
+      body=[head;body];    %³s¤WÀY¸ò¨­Åé
       if length(body)>long
-          body(end, : )=[];   %æŠŠè›‡çš„æœ€å¾Œä¸€æˆªå»æ‰
+          body(end, : )=[];   %§â³Dªº³Ì«á¤@ºI¥h±¼
       end
       
      if (sum(body(:, 1) ==body(1, 1)   & body(:, 2) == body(1, 2) )>1) 
-              msgbox('éŠæˆ²çµæŸ')
+              msgbox('¹CÀ¸µ²§ô')
               close;
      end
       
      if (head(1, 1)>20)||(head(1, 1)<1)||(head(1, 2)>20)||(head(1, 2)<1)
-              msgbox('éŠæˆ²çµæŸ');
+              msgbox('¹CÀ¸µ²§ô');
               close;
      end
       
@@ -78,7 +80,7 @@ function snakeGame
           food = randi(L,[1 2]);  
       end
          
-      set(drawFood, 'XData', food(1),  'YData', food(2));             %ä¸æ–­çš„åˆ·æ–°ç”»é¢
+      set(drawFood, 'XData', food(1),  'YData', food(2));             %¤£?ªº¨ê·s?­±
       set(drawSnake, 'XData', body( : , 1), 'YData', body( : , 2));
     end
 end
