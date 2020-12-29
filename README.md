@@ -2,9 +2,8 @@
 
 **如何開始遊戲**
 1. 下載snakeGame.m檔案。
-2. 用戶可在檔案第三行設置遊戲難度，1為最簡單，10為最難。
-3. 在command window輸入snakeGame以執行程序。
-4. 執行的同時畫面跳出代表遊戲開始，以上下左右四個按鍵控制蛇走向。
+2. 在command window輸入snakeGame(N)以執行程序。N為遊戲難度也，可選擇1～10任一數字，其中1為最簡單，10為最難。
+3. 執行的同時畫面跳出代表遊戲開始，以上下左右四個按鍵控制蛇走向。
 
 **遊戲規則**
 - 用戶需要操控蛇來吃下食物，蛇每吃下一個食物，長度就會增加一格。
@@ -19,6 +18,6 @@
 
 
 **參考資料**
-https://ch.mathworks.com/help/matlab/matlab_prog/use-a-matlab-timer-object.html
-https://www.jianshu.com/p/ca34b17f7974
-https://yuchungchuang.wordpress.com/2018/06/03/matlab-%E8%B2%AA%E5%90%83%E8%9B%87-snake/
+1. https://ch.mathworks.com/help/matlab/matlab_prog/use-a-matlab-timer-object.html
+2. https://www.jianshu.com/p/ca34b17f7974
+3. https://yuchungchuang.wordpress.com/2018/06/03/matlab-%E8%B2%AA%E5%90%83%E8%9B%87-snake/
