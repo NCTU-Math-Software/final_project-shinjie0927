@@ -17,6 +17,7 @@
 2. line7在axis中加0.5是為了方便檢測蛇頭是否碰到牆壁
 3. 主要概念為當蛇往前移動一格，就把他尾巴刪掉一格以保持蛇身長度
 4. 使用KeyPressFcn記錄上下左右方向鍵來控制蛇頭走向
+5. type2靈感概念來自遊戲 貪吃蛇進化論
 
 
 **參考資料**
@@ -25,3 +26,4 @@
 3. https://yuchungchuang.wordpress.com/2018/06/03/matlab-%E8%B2%AA%E5%90%83%E8%9B%87-snake/
 4. https://ch.mathworks.com/help/matlab/ref/scatter.html
 5. https://ch.mathworks.com/help/matlab/ref/questdlg.html
+
